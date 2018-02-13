@@ -16,7 +16,7 @@ The dockerfile has an ENTRYPOINT set to be ovftool, so run the container as if y
 
 For example, to export an OVA of a VM from vSphere:
 
-```docker run -it -v /home/cseelye:/root ovftool vi://username:pass@vcenter.hostnameorip/Datacenter/vm/vmname vmname.ova```
+```docker run -it --rm -v /home/$(whoami):/root/home -w /root/home ovftool vi://username:pass@vcenter.hostnameorip/Datacenter/vm/vmname vmname.ova```
 
 VMware's OVF Tool documenation can be found here:
 https://www.vmware.com/support/developer/ovf/ovf420/ovftool-420-userguide.pdf
